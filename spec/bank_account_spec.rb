@@ -25,4 +25,13 @@ describe BankAccount do
     end
   end
 
+  describe '#withdraw' do
+    it 'user can withdraw money from their account' do
+      account = BankAccount.new
+      account.deposit(100.00)
+      account.withdraw(50.00)
+      expect(account.balance).to eq(50.00)
+    end
+  end
+
 end
