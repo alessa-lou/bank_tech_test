@@ -10,4 +10,12 @@ describe BankAccount do
     expect(account.balance).to eq([])
   end
 
+  describe '#deposit' do
+    it 'user can deposit an amount into their bank account' do
+      account = BankAccount.new
+      account.deposit(100.00)
+      expect(account.balance[0]).to eq(100.00)
+    end
+  end
+
 end
