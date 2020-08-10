@@ -21,7 +21,7 @@ date || credit || debit || balance
 User Stories
 ============
 
-As a user,
+As a user
 So that I have money in the bank
 I want to be able to deposit money
 
