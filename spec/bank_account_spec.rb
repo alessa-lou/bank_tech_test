@@ -41,4 +41,14 @@ describe BankAccount do
     end
   end
 
+  describe '#print_statement' do
+    it 'user can see their balance on the bank statement' do
+      account = BankAccount.new
+      account.deposit(100.00)
+      p "|| balance \n #{account.balance}"
+      expect(account.print_statement).to eq("|| balance \n #{account.balance}")
+
+    end
+  end
+
 end

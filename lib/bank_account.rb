@@ -19,4 +19,8 @@ class BankAccount
       @balance -= amount
     end
   end
+
+  def print_statement
+    "|| balance \n #{@balance}"
+  end
 end
