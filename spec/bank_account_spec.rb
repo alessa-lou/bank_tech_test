@@ -32,6 +32,13 @@ describe BankAccount do
       account.withdraw(50.00)
       expect(account.balance).to eq(50.00)
     end
+
+    it 'user cannot withdraw more money than they have' do
+      account = BankAccount.new
+      account.deposit(100.00)
+      account.withdraw(100.00)
+      expect{account.withdraw(10.00)}.to raise_error("You have no funds left")
+    end
   end
 
 end

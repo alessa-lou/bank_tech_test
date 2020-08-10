@@ -12,6 +12,11 @@ class BankAccount
   end
 
   def withdraw(amount)
-    @balance -= amount
+    if
+      @balance <= 0
+      raise "You have no funds left"
+    else
+      @balance -= amount
+    end
   end
 end
