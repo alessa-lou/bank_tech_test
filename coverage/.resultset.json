@@ -10,16 +10,28 @@
           1,
           null,
           null,
+          1,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
       "/Users/Student/Documents/Makers/Projects/Week 10/bank/lib/bank_account.rb": {
         "lines": [
           1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          2,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1597065848
+    "timestamp": 1597066012
   }
 }
