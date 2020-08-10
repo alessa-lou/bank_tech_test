@@ -1,14 +1,20 @@
 class BankAccount
 
-  attr_accessor :balance
+  attr_accessor :balance, :credit, :debit, :date, :bank_statement
 
   def initialize
 
     @balance = 0
+    @bank_statement = []
+    # @credit = []
+    # @debit = []
+    @date = Time.now.strftime("%d/%m/%Y")
   end
 
   def deposit(amount)
     @balance += amount
+    @debit = amount
+    @bank_statement << {debit: @debit, date: @date}
   end
 
   def withdraw(amount)
@@ -17,10 +23,13 @@ class BankAccount
       raise "You have no funds left"
     else
       @balance -= amount
+      # @credit = amount
+      # @bank_statement << @date
     end
   end
 
   def print_statement
-    "|| balance \n #{@balance}"
+    # p @bank_statement[0][:debit]
+    "||  debit  || balance \n #{@bank_statement[0][:debit]}  ||  #{@balance}"
   end
 end

@@ -45,9 +45,13 @@ describe BankAccount do
     it 'user can see their balance on the bank statement' do
       account = BankAccount.new
       account.deposit(100.00)
-      p "|| balance \n #{account.balance}"
-      expect(account.print_statement).to eq("|| balance \n #{account.balance}")
+      expect(account.print_statement).to eq("||  debit  || balance \n #{account.debit}  ||  #{account.balance}")
+    end
 
+    it 'user can see money depositing transactions' do
+      account = BankAccount.new
+      account.deposit(100.00)
+      expect(account.print_statement).to eq("||  debit  || balance \n #{account.bank_statement[0][:debit]}  ||  #{account.balance}")
     end
   end
 
