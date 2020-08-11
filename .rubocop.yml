@@ -13,3 +13,6 @@ Style/BlockComments:
 
 Style/RedundantInterpolation:
   Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false

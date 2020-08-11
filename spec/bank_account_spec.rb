@@ -33,7 +33,7 @@ describe BankAccount do
     it 'user cannot withdraw more money than they have' do
       account.deposit(100.00)
       account.withdraw(100.00)
-      expect { account.withdraw(10.00) }.to raise_error('You have no funds left')
+      expect { account.withdraw(10.00) }.to raise_error('Not enough funds')
     end
   end
 

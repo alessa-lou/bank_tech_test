@@ -17,6 +17,12 @@ date       || credit  || debit  || balance
 13/01/2012 || 2000.00 ||        || 3000.00
 10/01/2012 || 1000.00 ||        || 1000.00
 
+My approach:
+
+* wrote out the acceptance criteria as user stories (below)
+* thought about the nouns and verbs in the user stories and converted those to classes/ methods
+* feature tested in irb 
+
 
 User Stories
 ============
@@ -43,3 +49,15 @@ Edge cases:
 * Can't withdraw money if balance is nil
 * Can't withdraw more money than is available
 * Can't deposit zero pounds
+
+How to run:
+
+bundle install
+start IRB:
+* require './lib/bank_account'
+* account = BankAccount.new
+
+Then use withdraw(amount)/ deposit(amount)/ print_statement methods
+
+How to run tests:
+rspec

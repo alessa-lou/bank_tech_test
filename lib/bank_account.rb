@@ -12,15 +12,19 @@ class BankAccount
   def deposit(amount)
     @balance += amount
     @debit = amount
+    add_transaction
+  end
+
+  def add_transaction
     @bank_statement << { date: @date, credit: @credit, debit: @debit, balance: @balance }
   end
 
   def withdraw(amount)
-    raise 'You have no funds left' if @balance <= 0
+    raise 'Not enough funds' if @balance <= 0
 
     @balance -= amount
     @credit = amount
-    @bank_statement << { date: @date, credit: @credit, debit: @debit, balance: @balance }
+    add_transaction
   end
 
   def print_statement
