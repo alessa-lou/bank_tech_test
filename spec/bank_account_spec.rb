@@ -48,22 +48,23 @@ describe BankAccount do
       expect(account.print_statement[0]).to include("#{account.bank_statement[0][:debit]}")
     end
 
-    it 'user can see money withdrawal transactions' do
-      account.deposit(100.00)
-      account.withdraw(50.00)
-      expect(account.print_statement[0]).to include("#{account.bank_statement[0][:credit]}")
-    end
+    context 'user makes deposit and then withdraws' do
+      before do
+        account.deposit(100.00)
+        account.withdraw(50.00)
+      end
 
-    it 'user can see the date on each transaction' do
-      account.deposit(100.00)
-      account.withdraw(50.00)
-      expect(account.print_statement[0]).to include("#{account.bank_statement[0][:date]}")
-    end
+      it 'user can see money withdrawal transactions' do
+        expect(account.print_statement[0]).to include("#{account.bank_statement[0][:credit]}")
+      end
 
-    it 'user can see the transactions in a formatted table' do
-      account.deposit(100.00)
-      account.withdraw(50.00)
-      expect(account.print_statement).to eq("date  ||  credit  ||  debit  ||  balance\n11/08/2020  ||    ||  100.0  ||  100.0\n11/08/2020  ||  50.0  ||  100.0  ||  50.0")
+      it 'user can see the date on each transaction' do
+        expect(account.print_statement[0]).to include("#{account.bank_statement[0][:date]}")
+      end
+
+      it 'user can see the transactions in a formatted table' do
+        expect(account.print_statement).to eq("date  ||  credit  ||  debit  ||  balance\n11/08/2020  ||    ||  100.0  ||  100.0\n11/08/2020  ||  50.0  ||  100.0  ||  50.0")
+      end
     end
   end
 end
