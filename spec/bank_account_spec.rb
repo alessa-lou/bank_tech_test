@@ -67,6 +67,13 @@ describe BankAccount do
       account.withdraw(50.00)
       expect(account.print_statement[0]).to include("#{account.bank_statement[0][:date]}")
     end
+
+    it 'user can see the transactions in a formatted table' do
+      account = BankAccount.new
+      account.deposit(100.00)
+      account.withdraw(50.00)
+      expect(account.print_statement[1]).to eq("date  ||  credit  ||  debit  ||  balance  \n #{account.bank_statement[1][:date]}  ||  #{account.bank_statement[1][:credit]}  ||  #{account.bank_statement[1][:debit]}  ||  #{account.bank_statement[1][:balance]}")
+    end
   end
 
 end

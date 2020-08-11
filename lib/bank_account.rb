@@ -31,7 +31,7 @@ class BankAccount
   def print_statement
 
      @bank_statement.collect do |transaction|
-      "date  ||  credit  ||  debit  ||  balance \n #{transaction.values.join("  ||  ")}"
+      "date  ||  credit  ||  debit  ||  balance  \n #{transaction.values.join("  ||  ")}"
      end
   end
 end
