@@ -6,15 +6,15 @@ class BankAccount
 
     @balance = 0
     @bank_statement = []
-    # @credit = []
-    # @debit = []
+    @credit = ""
+    @debit = ""
     @date = Time.now.strftime("%d/%m/%Y")
   end
 
   def deposit(amount)
     @balance += amount
     @debit = amount
-    @bank_statement << {debit: @debit, date: @date}
+    @bank_statement << {date: @date, credit: @credit, debit: @debit, balance: @balance}
   end
 
   def withdraw(amount)
@@ -24,11 +24,14 @@ class BankAccount
     else
       @balance -= amount
       @credit = amount
-      @bank_statement << {credit: @credit, date: @date}
+      @bank_statement << {date: @date, credit: @credit, debit: @debit, balance: @balance}
     end
   end
 
   def print_statement
-    "credit  ||  debit  || balance \n #{@bank_statement[0][:credit]}  ||  #{@bank_statement[0][:debit]}  ||  #{@balance}"
+
+     @bank_statement.collect do |transaction|
+      "date  ||  credit  ||  debit  ||  balance \n #{transaction.values.join("  ||  ")}"
+     end
   end
 end
