@@ -23,13 +23,12 @@ class BankAccount
       raise "You have no funds left"
     else
       @balance -= amount
-      # @credit = amount
-      # @bank_statement << @date
+      @credit = amount
+      @bank_statement << {credit: @credit, date: @date}
     end
   end
 
   def print_statement
-    # p @bank_statement[0][:debit]
-    "||  debit  || balance \n #{@bank_statement[0][:debit]}  ||  #{@balance}"
+    "credit  ||  debit  || balance \n #{@bank_statement[0][:credit]}  ||  #{@bank_statement[0][:debit]}  ||  #{@balance}"
   end
 end
