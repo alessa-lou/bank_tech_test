@@ -63,7 +63,7 @@ describe BankAccount do
     it 'user can see the transactions in a formatted table' do
       account.deposit(100.00)
       account.withdraw(50.00)
-      expect(account.print_statement[1]).to eq("date  ||  credit  ||  debit  ||  balance  \n #{account.bank_statement[1][:date]}  ||  #{account.bank_statement[1][:credit]}  ||  #{account.bank_statement[1][:debit]}  ||  #{account.bank_statement[1][:balance]}")
+      expect(account.print_statement).to eq("date  ||  credit  ||  debit  ||  balance\n11/08/2020  ||    ||  100.0  ||  100.0\n11/08/2020  ||  50.0  ||  100.0  ||  50.0")
     end
   end
 end
