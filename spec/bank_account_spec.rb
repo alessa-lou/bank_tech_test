@@ -2,6 +2,7 @@ require 'bank_account'
 
 describe BankAccount do
   subject(:account) { BankAccount.new }
+
   it 'initializes a new bank account instance' do
     expect(BankAccount.new).to be_an_instance_of(BankAccount)
   end
@@ -63,7 +64,9 @@ describe BankAccount do
       end
 
       it 'user can see the transactions in a formatted table' do
-        expect(account.print_statement).to eq("date  ||  credit  ||  debit  ||  balance\n11/08/2020  ||    ||  100.0  ||  100.0\n11/08/2020  ||  50.0  ||  100.0  ||  50.0")
+        @todays_date = Time.now.strftime('%d/%m/%Y')
+        allow(Time).to receive(:now).and_return(@todays_date)
+        expect(account.print_statement).to eq("date  ||  credit  ||  debit  ||  balance\n#{@todays_date}  ||    ||  100.0  ||  100.0\n#{@todays_date}  ||  50.0  ||  100.0  ||  50.0")
       end
     end
   end
