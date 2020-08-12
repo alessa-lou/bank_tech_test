@@ -10,21 +10,21 @@ My approach:
 User Stories
 ============
 
-As a user
-So that I have money in the bank
-I want to be able to deposit money
+As a user  
+So that I have money in the bank  
+I want to be able to deposit money  
 
-As a User
-so that I can spend my money
-I want to be able to withdraw money
+As a User  
+so that I can spend my money  
+I want to be able to withdraw money  
 
-As a User
-so that I can track my money
-I want to be able to print my bank statement
+As a User  
+so that I can track my money  
+I want to be able to print my bank statement  
 
-As a User
-So that I can track my spending
-I want to know the date I made transactions
+As a User  
+So that I can track my spending  
+I want to know the date I made transactions  
 
 
 Possible edge cases:
