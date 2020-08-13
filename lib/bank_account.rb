@@ -3,17 +3,19 @@ class BankAccount
 
   def initialize
     @balance = 0
-    @bank_statement = [{ string: 'date  ||  credit  ||  debit  ||  balance' }]
-    @date = Time.now.strftime('%d/%m/%Y')
+    @transactions = []
   end
 
   def deposit(amount)
+    raise 'Cannot deposit a negative amount' if amount <= 0
+
     @balance += amount
     add_transaction(amount, '', @balance)
   end
 
   def add_transaction(credit, debit, balance)
-    @bank_statement << { date: @date, credit: credit, debit: debit, balance: balance }
+    date = Time.now.strftime('%d/%m/%Y')
+    @transactions << { date: date, credit: credit, debit: debit, balance: balance }
   end
 
   def withdraw(amount)
@@ -23,10 +25,19 @@ class BankAccount
     add_transaction('', amount, @balance)
   end
 
-  def print_statement
-    transactions = @bank_statement.collect do |transaction|
+  def collect_transactions
+    transactions = @transactions.collect do |transaction|
       transaction.values.join('  ||  ')
     end
-    transactions.join("\n")
+    reversed_order = transactions.reverse.each { |transaction| transaction }
+    reversed_order.join(" \n ")
+  end
+
+  def statement_header
+    'date  ||  credit  ||  debit  ||  balance'
+  end
+
+  def print_statement
+    "#{statement_header} \n #{collect_transactions}"
   end
 end

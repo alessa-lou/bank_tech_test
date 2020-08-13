@@ -6,7 +6,6 @@ My approach:
 * feature tested in irb
 * TDD unit tests
 
-
 User Stories
 ============
 
