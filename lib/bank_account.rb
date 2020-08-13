@@ -4,27 +4,23 @@ class BankAccount
   def initialize
     @balance = 0
     @bank_statement = [{ string: 'date  ||  credit  ||  debit  ||  balance' }]
-    @credit = ''
-    @debit = ''
     @date = Time.now.strftime('%d/%m/%Y')
   end
 
   def deposit(amount)
     @balance += amount
-    @debit = amount
-    add_transaction
+    add_transaction(amount, '', @balance)
   end
 
-  def add_transaction
-    @bank_statement << { date: @date, credit: @credit, debit: @debit, balance: @balance }
+  def add_transaction(credit, debit, balance)
+    @bank_statement << { date: @date, credit: credit, debit: debit, balance: balance }
   end
 
   def withdraw(amount)
     raise 'Not enough funds' if @balance <= 0
 
     @balance -= amount
-    @credit = amount
-    add_transaction
+    add_transaction('', amount, @balance)
   end
 
   def print_statement

@@ -11,4 +11,4 @@ group :test do
   gem 'simplecov-console', require: false
 end
 
-# gem "rails"
+# gem 'rubocop', '0.79.0'
