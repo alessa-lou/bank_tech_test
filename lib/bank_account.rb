@@ -29,8 +29,12 @@ class BankAccount
     transactions = @transactions.collect do |transaction|
       transaction.values.join('  ||  ')
     end
-    reversed_order = transactions.reverse.each { |transaction| transaction }
-    reversed_order.join(" \n ")
+    reverse_order(transactions)
+  end
+
+  def reverse_order(transactions)
+    reversed = transactions.reverse.each { |transaction| transaction }
+    reversed.join(" \n ")
   end
 
   def statement_header
