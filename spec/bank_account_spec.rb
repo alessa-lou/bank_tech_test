@@ -58,16 +58,15 @@ describe BankAccount do
     end
 
     it 'user can see money deposited transactions' do
-      account.deposit(100.00)
       account.deposit(45.69)
       expect(account.print_statement).to include('45.69')
-      expect(account.balance).to eq(145.69)
     end
 
     context 'user makes deposit and then withdraws' do
       before do
         account.deposit(100.00)
         account.withdraw(50.00)
+        @todays_date = Time.now.strftime('%d/%m/%Y')
       end
 
       it 'user can see money withdrawal transactions' do
@@ -76,21 +75,16 @@ describe BankAccount do
       end
 
       it 'user can see the date on each transaction' do
-        expect(account.print_statement).to include('13/08/2020')
+        expect(account.print_statement).to include("#{@todays_date}")
       end
 
       it 'user can see the transactions in a formatted table' do
-        @todays_date = Time.now.strftime('%d/%m/%Y')
-        allow(Time).to receive(:now).and_return(@todays_date)
         expect(account.print_statement).to eq("date  ||  credit  ||  debit  ||  balance \n #{@todays_date}  ||    ||  50.0  ||  50.0 \n #{@todays_date}  ||  100.0  ||    ||  100.0")
       end
 
       it 'user can see the transactions in reverse chronological order' do
         account.withdraw(37.54)
         account.deposit(530.24)
-        @todays_date = Time.now.strftime('%d/%m/%Y')
-        allow(Time).to receive(:now).and_return(@todays_date)
-        p account.print_statement
         expect(account.print_statement).to eq("date  ||  credit  ||  debit  ||  balance \n #{@todays_date}  ||  530.24  ||    ||  542.7 \n #{@todays_date}  ||    ||  37.54  ||  12.46 \n #{@todays_date}  ||    ||  50.0  ||  50.0 \n #{@todays_date}  ||  100.0  ||    ||  100.0")
       end
     end

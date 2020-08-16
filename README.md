@@ -6,6 +6,11 @@ My approach:
 * feature tested in irb
 * TDD unit tests
 
+Refactored after first submission:
+
+* More thorough tests (for different amounts, for not being able to deposit £0, etc)
+* 
+
 User Stories
 ============
 
