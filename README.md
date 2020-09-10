@@ -1,15 +1,15 @@
 My approach:
 ============
 
-* wrote out the acceptance criteria as user stories (below)
-* thought about the nouns and verbs in the user stories and converted those to classes/ methods
-* feature tested in irb
+* Wrote out the acceptance criteria as user stories (below)
+* Thought about the nouns and verbs in the user stories and converted those to classes/ methods
+* Feature tested in irb
 * TDD unit tests
 
 Refactored after first submission:
 
 * More thorough tests (for different amounts, for not being able to deposit £0, etc)
-* 
+* Extracted the Statement class
 
 User Stories
 ============
