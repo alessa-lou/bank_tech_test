@@ -10,6 +10,7 @@ Refactored after first submission:
 
 * More thorough tests (for different amounts, for not being able to deposit £0, etc)
 * Extracted the Statement class
+* Added feature testing
 
 User Stories
 ============
