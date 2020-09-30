@@ -41,23 +41,23 @@ Possible edge cases:
 How to run:
 ===========
 
-* bundle install
+* `bundle install`
 
 start IRB:
 ..........
 
-* require './lib/bank_account'
-* account = BankAccount.new
+* `require './lib/bank_account'`
+* `account = BankAccount.new`
 
-* account.deposit(amount) to add money to balance
-* account.withdraw(amount) to remove money from balance
-* account.print_statement for your printed bank statement.
-* Then use withdraw(amount)/ deposit(amount)/ print_statement methods
+* `account.deposit(amount)` to add money to balance
+* `account.withdraw(amount)` to remove money from balance
+* `account.print_statement` for your printed bank statement.
+* Then use `withdraw(amount)`/ `deposit(amount)`/ `print_statement` methods
 
 How to run tests:
 =================
-* rspec
-* rubocop
+* `rspec`
+* `rubocop`
 
 
 
