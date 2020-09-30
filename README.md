@@ -35,7 +35,7 @@ I want to know the date I made transactions
 Possible edge cases:
 ====================
 
-* Can't withdraw money if balance is nil
+* Can't withdraw money if balance is zero
 * Can't withdraw more money than is available
 
 How to run:
