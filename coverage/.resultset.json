@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Student/Documents/Makers/Projects/Week 10/bank/spec/bank_account_spec.rb": {
+      "/home/alessa-lou/CODE/bank_tech_test/spec/bank_account_spec.rb": {
         "lines": [
           1,
           null,
@@ -97,7 +97,7 @@
           null
         ]
       },
-      "/Users/Student/Documents/Makers/Projects/Week 10/bank/lib/bank_account.rb": {
+      "/home/alessa-lou/CODE/bank_tech_test/lib/bank_account.rb": {
         "lines": [
           1,
           1,
@@ -123,12 +123,9 @@
           1,
           14,
           null,
+          null,
           13,
           13,
-          null,
-          null,
-          1,
-          7,
           null,
           null,
           1,
@@ -137,22 +134,7 @@
           null
         ]
       },
-      "/Users/Student/Documents/Makers/Projects/Week 10/bank/spec/features/printing_statement_spec.rb": {
-        "lines": [
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/Student/Documents/Makers/Projects/Week 10/bank/spec/statement_spec.rb": {
+      "/home/alessa-lou/CODE/bank_tech_test/spec/features/printing_statement_spec.rb": {
         "lines": [
           1,
           1,
@@ -162,23 +144,19 @@
           2,
           1,
           1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
           1,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/Users/Student/Documents/Makers/Projects/Week 10/bank/lib/statement.rb": {
+      "/home/alessa-lou/CODE/bank_tech_test/lib/statement.rb": {
         "lines": [
           1,
           null,
@@ -193,10 +171,42 @@
           26,
           8,
           null,
+          null,
+          1,
+          7,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/alessa-lou/CODE/bank_tech_test/spec/statement_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          2,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1597586134
+    "timestamp": 1601563747
   }
 }

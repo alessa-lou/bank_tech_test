@@ -11,4 +11,9 @@ class Statement
     reversed = transactions.reverse.each { |transaction| transaction }
     reversed.join(" \n ")
   end
+
+  def statement_header
+    'date  ||  credit  ||  debit  ||  balance'
+  end
+  
 end

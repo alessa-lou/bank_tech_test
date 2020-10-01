@@ -47,6 +47,7 @@ start IRB:
 ..........
 
 * `require './lib/bank_account'`
+* `require './lib/statement'`
 * `account = BankAccount.new`
 
 * `account.deposit(amount)` to add money to balance

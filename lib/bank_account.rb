@@ -1,10 +1,10 @@
 class BankAccount
   attr_accessor :balance, :transactions
 
-  def initialize
+  def initialize(statement = Statement.new)
     @balance = 0
     @transactions = []
-    @statement = Statement.new
+    @statement = statement
   end
 
   def deposit(amount)
@@ -20,17 +20,14 @@ class BankAccount
   end
 
   def withdraw(amount)
-    raise 'Not enough funds' if @balance <= 0
+    raise 'Not enough funds' if @balance <= 0 || amount > @balance
+    # raise 'Not enough funds' if amount > @balance
 
     @balance -= amount
     add_transaction('', amount, @balance)
   end
 
-  def statement_header
-    'date  ||  credit  ||  debit  ||  balance'
-  end
-
   def print_statement
-    "#{statement_header} \n #{@statement.print_transactions(transactions)}"
+    "#{@statement.statement_header} \n #{@statement.print_transactions(transactions)}"
   end
 end
