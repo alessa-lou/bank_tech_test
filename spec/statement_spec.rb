@@ -11,12 +11,16 @@ describe Statement do
   end
 
   describe '#print_transactions' do
-    let(:print_transactions) do
+    let(:print_fake_transactions) do
       "#{@todays_date}  ||  100.00  ||    ||  100.00"
     end
 
+    let(:statement_double) do double :statement
+      allow(statement_double).to receive(:print_transactions).and_return("date  ||  credit  ||  debit  ||  balance \n 05/10/2020  ||  100.00  ||    ||  100.00")
+     end
+
     it "prints the transaction history in a formatted way" do
-      expect(statement.print_transactions(transactions)).to eq(print_transactions)
+      expect(statement_double.print_transactions(transactions)).to eq(print_fake_transactions)
     end
   end
 
