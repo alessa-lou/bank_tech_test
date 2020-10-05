@@ -1,10 +1,9 @@
 class BankAccount
   attr_accessor :balance, :transactions
 
-  def initialize(statement = Statement.new)
+  def initialize
     @balance = 0
     @transactions = []
-    @statement = statement
   end
 
   def deposit(amount)
@@ -27,7 +26,7 @@ class BankAccount
     add_transaction('', amount, @balance)
   end
 
-  def print_statement
-    "#{@statement.statement_header} \n #{@statement.print_transactions(transactions)}"
+  def print_statement(statement = Statement.new)
+    "#{statement.statement_header} \n #{statement.print_transactions(transactions)}"
   end
 end

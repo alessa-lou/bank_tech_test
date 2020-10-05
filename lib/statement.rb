@@ -1,5 +1,7 @@
 class Statement
-
+  
+  private 
+  
   def print_transactions(transactions)
     transactions = transactions.collect do |transaction|
       transaction.values.join('  ||  ')
@@ -15,5 +17,5 @@ class Statement
   def statement_header
     'date  ||  credit  ||  debit  ||  balance'
   end
-  
+
 end
