@@ -12,9 +12,10 @@ class BankAccount
 
   def deposit(amount)
     raise 'Cannot deposit a negative amount' if amount <= 0
+
     amount = format_amount(amount)
     @balance += amount.to_f
-    add_transaction(amount, '', '%.2f' % @balance)
+    add_transaction(amount, '', format('%.2f', @balance))
   end
 
   def add_transaction(credit, debit, balance)
@@ -24,13 +25,13 @@ class BankAccount
 
   def withdraw(amount)
     raise 'Not enough funds' if @balance <= 0 || amount > @balance
+
     amount = format_amount(amount)
     @balance -= amount.to_f
-    add_transaction('', amount, '%.2f' % @balance)
+    add_transaction('', amount, format('%.2f', @balance))
   end
 
   def print_statement(statement = Statement.new)
     "#{statement.statement_header} \n #{statement.print_transactions(transactions)}"
   end
-
 end

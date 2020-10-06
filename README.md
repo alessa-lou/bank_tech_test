@@ -12,6 +12,12 @@ Refactored after first submission:
 * Extracted the Statement class
 * Added feature testing
 
+Refactored again:
+
+* Used dependency injection of Statement class into BankAccount class
+* Mocked Statement class in BankAccount unit tests
+* Formatted the money deposited/ withdrawn to two decimal places
+
 User Stories
 ============
 

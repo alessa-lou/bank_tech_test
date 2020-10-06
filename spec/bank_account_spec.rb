@@ -1,7 +1,6 @@
 require 'bank_account'
 
 describe BankAccount do
-
   subject(:account) { BankAccount.new }
 
   describe '#deposit' do
@@ -44,11 +43,12 @@ describe BankAccount do
   end
 
   describe '#print_statement' do
-    let(:statement_double) do double :statement
-    @todays_date = Time.now.strftime('%d/%m/%Y')
-    allow(account).to receive(:print_statement).and_return("date  ||  credit  ||  debit  ||  balance \n #{@todays_date}  ||  100.00  ||    ||  100.00 \n #{@todays_date}  ||  50.00  ||    ||  150.00 ")
-   end
-    
+    let(:statement_double) do
+      double :statement
+      @todays_date = Time.now.strftime('%d/%m/%Y')
+      allow(account).to receive(:print_statement).and_return("date  ||  credit  ||  debit  ||  balance \n #{@todays_date}  ||  100.00  ||    ||  100.00 \n #{@todays_date}  ||  50.00  ||    ||  150.00 ")
+    end
+
     it 'user can see their balance on the bank statement' do
       account.deposit(100.00)
       account.deposit(50.00)
@@ -66,9 +66,10 @@ describe BankAccount do
         @todays_date = Time.now.strftime('%d/%m/%Y')
       end
 
-      let(:statement_double) do double :statement
+      let(:statement_double) do
+        double :statement
         allow(account).to receive(:print_statement).and_return("date  ||  credit  ||  debit  ||  balance \n #{@todays_date}  ||  100.00  ||    ||  100.00 \n #{@todays_date}  ||    ||  50.00  ||  50.00")
-       end
+      end
 
       it 'user can see money withdrawal transactions' do
         expect(account.print_statement(statement_double)).to include('50.00')

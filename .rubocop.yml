@@ -16,3 +16,6 @@ Style/RedundantInterpolation:
 
 Metrics/BlockLength:
   Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false
